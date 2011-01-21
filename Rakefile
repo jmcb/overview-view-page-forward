@@ -5,7 +5,7 @@ require 'rake/rdoctask'
 desc 'Default: run unit tests.'
 task :default => :test
 
-desc 'Test the redmine_project_forward plugin.'
+desc 'Test the redmine_projects_page_forward plugin.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'
@@ -13,10 +13,10 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = true
 end
 
-desc 'Generate documentation for the redmine_project_forward plugin.'
+desc 'Generate documentation for the redmine_projects_page_forward plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Redmine-project-forward'
+  rdoc.title    = 'Redmine-projects-page-forward'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
