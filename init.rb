@@ -1,15 +1,5 @@
 require 'redmine'
 
-# Patches!
-require 'dispatcher'
-
-Dispatcher.to_prepare :overview_view_page_forward do
-    gem 'lockfile'
-
-    require_dependency 'projects_helper'
-    ProjectsHelper.send(:include, OverviewProjectsHelperPatch)
-end
-
 Redmine::Plugin.register :overview_view_page_forward do
   name 'Overview->View page forward'
   author 'Jon McManus'
