@@ -30,3 +30,5 @@ module ProjectsHelper
     end
     s
   end
+
+end
