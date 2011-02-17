@@ -2,6 +2,8 @@ require 'redmine'
 
 require 'dispatcher'
 
+require 'lib/overview-view-page-forward/patches/projects_helper_patch'
+
 Dispatcher.to_prepare :overview_view_page_forward do
     require_dependency 'projects_helper'
     ProjectsHelper.send(:include, OverviewForwardPluginPatch) unless ProjectsHelper.included_modules.include?(OverviewForwardPluginPatch)
