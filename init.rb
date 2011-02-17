@@ -1,5 +1,12 @@
 require 'redmine'
 
+require 'dispatcher'
+
+Dispatcher.to_prepare :overview_view_page_forward do
+    require_dependency 'projects_helper'
+    ProjectsHelper.send(:include, OverviewForwardPluginPatch) unless ProjectsHelper.included_modules.include?(OverviewForwardPluginPatch)
+end
+
 Redmine::Plugin.register :overview_view_page_forward do
   name 'Overview->View page forward'
   author 'Jon McManus'
