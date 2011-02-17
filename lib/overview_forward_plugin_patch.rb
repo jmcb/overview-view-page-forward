@@ -2,7 +2,7 @@ module OverviewForwardPluginPatch
     def self.included(base)
         base.send(:include, InstanceMethods)
         base.class_eval do
-            alias_method_chain :render_project_hierarchy, :with_issue_link
+            alias_method_chain :render_project_hierarchy, :issue_link
         end
     end
 
